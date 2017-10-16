@@ -35,7 +35,7 @@
                     {{ csrf_field() }}
 
                     <div class="form-group">
-                        <label for="num" class="col-sm-2 col-sm-2 control-label">名称</label>
+                        <label for="num" class="col-sm-2 col-sm-2 control-label">房号</label>
                         <div class="col-sm-3">
                             <input type="text" class="form-control" id="num" name="num" value="{{ $old_input['num'] }}" required>
                         </div>
@@ -56,8 +56,18 @@
                         </div>
                     </div>
 
+                    @if($sign == 'add')
+                        <div class="form-group">
+                            <label for="bed_num" class="col-sm-2 col-sm-2 control-label">床位数</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="bed_num" name="bed_num" value="{{ $old_input['bed_num']}}"
+                                       placeholder="整租房间请填0" required>
+                            </div>
+                        </div>
+                    @endif
+
                     <div class="form-group">
-                        <label for="status" class="col-sm-2 col-sm-2 control-label">房型</label>
+                        <label for="status" class="col-sm-2 col-sm-2 control-label">状态</label>
                         <div class="col-sm-3">
                             <select class="form-control" id="status" name="status">
                                 @if(isset($old_input['status']))

@@ -10,7 +10,7 @@ Author: ThemeBucket
 @import url('../fonts/css/font-awesome.min.css');
 
 body {
-    background: #004E90;
+    background: #59A725;
     font-family: 'Open Sans', sans-serif;
     color: #7a7676;
     line-height: 20px;
@@ -59,7 +59,7 @@ hr {
 }
 
 .form-signin {
-    max-width: 330px;
+    max-width: 560px;
     margin: 100px auto;
     background: rgba(0,0,0,0.3);
     border-radius: 5px;
@@ -298,7 +298,7 @@ hr {
 
 .custom-nav > li > a:hover,
 .custom-nav > li > a:active {
-    background-color: #004E90;
+    background-color: #59A725;
     color: #fff;
     border-radius: 0;
     -webkit-border-radius: 0;
@@ -309,12 +309,12 @@ hr {
 }
 
 .custom-nav > li.menu-list > a:hover {
-    background-color: #004E90;
+    background-color: #59A725;
     background-image: url(../images/plus.png);
 }
 
 .custom-nav > li.nav-active > a {
-    background-color: #0173d3;
+    background-color: #6ac42e;
     background-image: url(../images/minus.png);
     color: #fff;
 }
@@ -330,7 +330,7 @@ hr {
 .custom-nav > li.active > a,
 .custom-nav > li.active > a:hover,
 .custom-nav > li.active > a:focus {
-    background-color: #0173d3;
+    background-color: #6ac42e;
     color: #fff;
 }
 
@@ -364,7 +364,7 @@ hr {
 
 .custom-nav .sub-menu-list > li > a {
     color: #fff;
-    background: #0162b5;
+    background: #6ac42e;
     font-size: 13px;
     display: block;
     padding: 10px 5px 10px 50px;
@@ -378,7 +378,7 @@ hr {
 .custom-nav .sub-menu-list > li > a:focus {
     text-decoration: none;
     color: #fff;
-    background: #004E90;
+    background: #59A725;
 }
 
 .custom-nav .sub-menu-list > li .fa {
@@ -391,7 +391,7 @@ hr {
 }
 
 .custom-nav .sub-menu-list > li.active > a {
-    background-color: #0173d3;
+    background-color: #4b8822;
 }
 
 .custom-nav .sub-menu-list ul {
@@ -560,7 +560,7 @@ h5.left-nav-title {
     padding: 15px;
     cursor: pointer;
     float: left;
-    color: #212121;
+    color: #fff;
     border-right: 1px solid #e7e7e7;
     -moz-transition: all 0.2s ease-out 0s;
     -webkit-transition: all 0.2s ease-out 0s;
@@ -612,7 +612,7 @@ h5.left-nav-title {
 .notification-menu .dropdown-toggle {
     padding: 12px 10px;
     border-color: #fff;
-    background: #fff;
+    background: #59A725;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -624,8 +624,8 @@ h5.left-nav-title {
 .notification-menu .dropdown-toggle:active,
 .notification-menu .dropdown-toggle.active,
 .notification-menu .open .dropdown-toggle.dropdown-toggle {
-    background: #004E90;
-    color: #65cea7;
+    background: #59A725;
+    color: #fff;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -845,7 +845,7 @@ h5.left-nav-title {
     left: 0;
     width: 240px;
     z-index: 100;
-    background: #004E90;
+    background: #59A725;
 
 }
 
@@ -859,6 +859,7 @@ h5.left-nav-title {
     left: 240px;
     width: 100%;
     z-index: 100;
+    background: #59A725;
 }
 
 .sticky-header .main-content {
@@ -951,7 +952,7 @@ h5.left-nav-title {
 
 .boxed-view .container {
     position: relative;
-    background: #004E90;
+    background: #59A725;
     padding: 0;
 }
 
@@ -1217,7 +1218,7 @@ footer.sticky-footer {
 
 .panel.deep-purple-box {
     background: #49586e;
-    box-shadow: 0 5px 0 #004E90;
+    box-shadow: 0 5px 0 #59A725;
     color: #fff;
 }
 

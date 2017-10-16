@@ -93,8 +93,24 @@ class RoomService
         $data['commodity_id'] = $post['commodity_id'];
         $data['status'] = $post['status'];
 
-        //执行插入或更新
-        return empty($id) ? $this->room->create($data) : $this->room->update($id, $data);
+        if (!empty($id)) {
+            //执行更新
+            return $this->room->update($id, $data);
+        }
+
+        //执行插入1
+        if ($post['bed_num'] == 0) {
+            return $this->room->create($data);
+        }
+
+        //执行插入2
+        for ($i=1; $i <= $post['bed_num']; $i++) {
+            $data['num'] = $post['num'].'-'.$i;
+            $this->room->create($data);
+        }
+
+        return true;
+
     }
 
     /**

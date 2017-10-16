@@ -92,6 +92,13 @@ class RoomController extends Controller
             'status' => 'required|integer',
         ]);
 
+        //添加时判断
+        if (empty($id)) {
+            $this->validate($this->request, [
+                'bed_num' => 'required|integer',
+            ]);
+        }
+
         try {
             $this->room->updateOrCreate($this->request->all(), $id);
         } catch (\Exception $e) {

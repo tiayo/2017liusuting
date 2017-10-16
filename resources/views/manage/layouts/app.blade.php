@@ -69,7 +69,7 @@
 
                     </li>
                     <li>
-                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="color: #fff">
                             当前帐号:
                             {{ Auth::guard()->user()['name'] }}
                             <span class="caret"></span>

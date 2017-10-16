@@ -43,8 +43,8 @@
                         </span>
                     </div>
                 </div>
-                <button class="btn btn-lg btn-login btn-block" type="submit">
-                    <i class="fa fa-check"></i>
+                <button class="btn btn-login btn-block" type="submit">
+                    登录
                 </button>
             </form>
             <div class="registration">

@@ -1,11 +1,5 @@
 <!--sidebar nav start-->
 <ul style="margin-top:100px;" class="nav nav-pills nav-stacked custom-nav">
-    <li class="menu-list" id="nav_0"><a href=""><i class="fa fa-home"></i> <span>房间管理</span></a>
-        <ul class="sub-menu-list">
-            <li id="nav_0_1"><a href=" {{ route('room_list') }} ">房间管理</a></li>
-            <li id="nav_0_2"><a href=" {{ route('room_add') }} ">添加房间</a></li>
-        </ul>
-    </li>
 
     <li class="menu-list" id="nav_1"><a href=""><i class="fa fa-shopping-cart"></i> <span>客房类型</span></a>
         <ul class="sub-menu-list">
@@ -14,9 +8,10 @@
         </ul>
     </li>
 
-    <li class="menu-list" id="nav_2"><a href=""><i class="fa fa-user"></i> <span>会员管理</span></a>
+    <li class="menu-list" id="nav_0"><a href=""><i class="fa fa-home"></i> <span>房间管理</span></a>
         <ul class="sub-menu-list">
-            <li id="nav_2_1"><a href="{{ route('user_list') }}">会员管理</a></li>
+            <li id="nav_0_1"><a href=" {{ route('room_list') }} ">房间管理</a></li>
+            <li id="nav_0_2"><a href=" {{ route('room_add') }} ">添加房间</a></li>
         </ul>
     </li>
 
@@ -28,10 +23,16 @@
         </ul>
     </li>
 
-    <li class="menu-list" id="nav_4"><a href=""><i class="fa fa-book"></i> <span>文章管理</span></a>
+    <li class="menu-list" id="nav_4"><a href=""><i class="fa fa-book"></i> <span>旅游资讯</span></a>
         <ul class="sub-menu-list">
-            <li id="nav_4_1"><a href="{{ route('article_list') }}">文章管理</a></li>
-            <li id="nav_4_2"><a href="{{ route('article_add') }}">添加文章</a></li>
+            <li id="nav_4_1"><a href="{{ route('article_list') }}">资讯管理</a></li>
+            <li id="nav_4_2"><a href="{{ route('article_add') }}">添加资讯</a></li>
+        </ul>
+    </li>
+
+    <li class="menu-list" id="nav_2"><a href=""><i class="fa fa-user"></i> <span>会员管理</span></a>
+        <ul class="sub-menu-list">
+            <li id="nav_2_1"><a href="{{ route('user_list') }}">会员管理</a></li>
         </ul>
     </li>
 </ul>
