@@ -119,7 +119,7 @@ class RoomController extends Controller
         try {
             $this->room->destroy($id);
         } catch (\Exception $e) {
-            return response($e->getMessage(), 500);
+            return redirect()->back()->withErrors($e->getMessage());
         }
 
         return redirect()->route('room_list');
