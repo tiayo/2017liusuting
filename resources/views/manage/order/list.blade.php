@@ -64,7 +64,7 @@
                                 <td>{{ $list->commodity->name }}</td>
                                 <td>
                                     @foreach($list->orderDetail as $key => $detail)
-                                        {{ $detail->room->num }}
+                                        {{ $detail->room->num ?? '未知' }}
 
                                         @if ($key + 1 < count($list->orderDetail))
                                             |

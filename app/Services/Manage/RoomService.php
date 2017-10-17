@@ -2,16 +2,18 @@
 
 namespace App\Services\Manage;
 
+use App\Repositories\OrderDetailRepository;
 use App\Repositories\RoomRepository;
 use Exception;
 
 class RoomService
 {
-    protected $room;
+    protected $room, $order_detail;
 
-    public function __construct(RoomRepository $room)
+    public function __construct(RoomRepository $room, OrderDetailRepository $order_detail)
     {
         $this->room = $room;
+        $this->order_detail = $order_detail;
     }
 
     /**
@@ -122,7 +124,10 @@ class RoomService
     public function destroy($id)
     {
         //验证是否可以操作当前记录
-        $this->validata($id)->toArray();
+        $room = $this->validata($id)->toArray();
+
+        //验证房间是否绑定订单绑定（抛错中断）
+        throw_if($room['status'] != 1, Exception::class, '状态为不可用，可能有订单绑定，请确认后再进行删除！', 403);
 
         //执行删除
         return $this->room->destroy($id);

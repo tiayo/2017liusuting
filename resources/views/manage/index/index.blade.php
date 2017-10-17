@@ -90,8 +90,12 @@
                                     <td>{{ $list->user->name }}</td>
                                     <td>{{ $list->commodity->name }}</td>
                                     <td>
-                                        @foreach($list->orderDetail as $detail)
-                                            {{ $detail->room->num }}|
+                                        @foreach($list->orderDetail as $key => $detail)
+                                            {{ $detail->room->num ?? '未知' }}
+
+                                            @if ($key + 1 < count($list->orderDetail))
+                                                |
+                                            @endif
                                         @endforeach
                                     </td>
                                     <td>{{ $list['day'] }}</td>

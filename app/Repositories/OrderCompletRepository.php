@@ -25,7 +25,11 @@ class OrderCompletRepository
 
         //获取房间号
         foreach($order->orderDetail as $key => $detail) {
-            $room .= $detail->room->num.'|';
+            //获取当前房间号
+            $room_num = $detail->room->num ?? '未知';
+
+            //拼接字符串
+            $room .= $room_num.'|';
         }
 
         $order = $order->toArray();
