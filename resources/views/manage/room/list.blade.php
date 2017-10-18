@@ -32,7 +32,7 @@
                     <div class="form-group">
                         <label class="sr-only" for="search"></label>
                         <input type="text" class="form-control" id="search" name="keyword"
-                               value="{{ Request::get('keyword') }}" placeholder="输入分类" required>
+                               value="{{ Request::get('keyword') }}" placeholder="输入房号" required>
                     </div>
                     <button type="submit" class="btn btn-primary" id="salesman_search">搜索</button>
                 </form>

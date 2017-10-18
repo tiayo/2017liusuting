@@ -76,9 +76,7 @@ class RoomRepository
     public function getSearch($num, $keyword)
     {
         return $this->room
-            ->where(function ($query) use ($keyword) {
-                $query->where('categories.name', 'like', "%$keyword%");
-            })
+            ->where('num', 'like', "%$keyword%")
             ->orderBy('id', 'desc')
             ->paginate($num);
     }
