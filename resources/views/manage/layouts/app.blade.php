@@ -56,7 +56,7 @@
         <!-- header section start-->
         <div class="header-section">
             <!--toggle button start-->
-            <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+            {{--<a class="toggle-btn"><i class="fa fa-bars"></i></a>--}}
             <!--toggle button end-->
             <!--search start-->
             {{--<form class="searchform" id="searchform_id">--}}
@@ -69,13 +69,8 @@
 
                     </li>
                     <li>
-                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="color: #fff">
-                            当前帐号:
-                            {{ Auth::guard()->user()['name'] }}
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-                            <li><a href="{{ route('manage.logout') }}"><i class="fa fa-sign-out"></i>退出登录</a></li>
+                        <a href="#" class="btn" data-toggle="dropdown" style="color: #fff">当前帐号:{{ Auth::guard()->user()['name'] }}</a>
+                        <a style="color: white;" class="btn" href="{{ route('manage.logout') }}">退出登录</a>
                         </ul>
                     </li>
 
