@@ -36,7 +36,7 @@
                     <div class="form-group">
                         <label for="email" class="col-sm-2 col-sm-2 control-label">登录账号</label>
                         <div class="col-sm-3">
-                            <input type="email" class="form-control" id="email" placeholder="填写邮箱" name="email" value="{{ $old_input['email'] }}" readonly>
+                            <input type="email" class="form-control" id="email" placeholder="填写邮箱" name="email" value="{{ $old_input['email'] }}">
                         </div>
                     </div>
                     <div class="form-group">

@@ -25,7 +25,7 @@
                 </span>
             </div>
         </div>
-        
+
 		<section class="panel">
             <div class="panel-body">
                 <form class="form-inline" id="search_form">
