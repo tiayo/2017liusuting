@@ -4,7 +4,7 @@
 @section('title', '结算页面')
 
 @section('body')
-    <form action="{{ route('order_add') }}" method="post">
+    <form action="{{ route('home.order_add_post') }}" method="post">
         {{ csrf_field() }}
         <input name="commodity_id" type="hidden" value="{{ $commodity['id'] }}">
         <input name="status" type="hidden" value="0">
