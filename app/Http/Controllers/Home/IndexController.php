@@ -19,11 +19,10 @@ class IndexController extends Controller
 
     public function index()
     {
-        //今日推荐
-        $recommend_today = $this->index->getByType(0, 10);
+        $commodities = $this->index->getByType(0, 6);
 
         return view('home.index.index', [
-            'recommend_today' => $recommend_today,
+            'commodities' => $commodities
         ]);
     }
 

@@ -4,11 +4,6 @@
 
 @section('body')
     <div class="index clearfix">
-        <div class="search">
-            <a href="{{ route('home.category_list') }}" class="fenlei"></a>
-            <a href="{{ route('home.search') }}" class="search-input"><input type="text" placeholder="搜索礼品"/></a>
-            <a href="{{ route('home.car') }}" class="shopping-cartt"><em>{{ $car_count }}</em></a>
-        </div>
         <div class="swiper-container index-bigpic clearfix">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -24,40 +19,59 @@
             <!-- 分页器 -->
             <div class="swiper-pagination"></div>
         </div>
-        <div class="nav-top clearfix">
-            <a href="{{ route('home.category_group', ['id' => 1]) }}">精选产品</a>
-            <a href="{{ route('home.category_group', ['id' => 2]) }}">超值专区</a>
-            <a href="{{ route('home.category_group', ['id' => 3]) }}">大牌专区</a>
-            <a href="{{ route('home.category_group', ['id' => 4]) }}">折扣专区</a>
+        <div class="goods clearfix">
+            @foreach($commodities as $commodity)
+                <div class="swiper-containerRoom1 index-room">
+                    <div class="swiper-wrapper">
+                        @for($i=0; $i<9; $i++)
+                            @if (!empty($commodity['image_'.$i]))
+                                <div class="swiper-slide">
+                                    <img src="{{ $commodity['image_'.$i] }}"/>
+                                </div>
+                            @endif
+                        @endfor
+                    </div>
+                    <span class="room-name">{{ $commodity['name'] }}</span>
+                </div>
+            @endforeach
         </div>
-        <div class="goods">
-            <b class="hot-exchange clearfix" style="width: 100%;padding-left: 1em;">今日推荐</b>
-            <ul class="goods-con clearfix">
-                @foreach($recommend_today as $commodity)
-                    <li>
-                        <a href="{{ route('home.commodity_view', ['id' => $commodity['id']]) }}">
-                            <h3>
-                                <img src="{{ $commodity['image_0'] }}" height="750" width="750"/>
-                            </h3>
-                            <h2>{{ $commodity['name'] }}</h2>
-                            <strong class="price clearfix">
-                                <h4>{{ $commodity['price'] }}</h4>
-                                <!-- <h5><em>100</em>.00</h5> -->
-                            </strong>
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
+        <div class="swiper-containerScenic">
+            <div class="scenic">附近景点</div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="scenic-title">景点介绍标题</div>
+                    <div class="scenic-con">一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容</div>
+                    <a href="news.html" class="scenic-details">查看详情</a>
+                </div>
+                <div class="swiper-slide">
+                    <div class="scenic-title">景点介绍标题</div>
+                    <div class="scenic-con">一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容</div>
+                    <a href="news.html" class="scenic-details">查看详情</a>
+                </div>
+                <div class="swiper-slide">
+                    <div class="scenic-title">景点介绍标题</div>
+                    <div class="scenic-con">一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容</div>
+                    <a href="news.html" class="scenic-details">查看详情</a>
+                </div>
+                <div class="swiper-slide">
+                    <div class="scenic-title">景点介绍标题</div>
+                    <div class="scenic-con">一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容</div>
+                    <a href="news.html" class="scenic-details">查看详情</a>
+                </div>
+                <div class="swiper-slide">
+                    <div class="scenic-title">景点介绍标题</div>
+                    <div class="scenic-con">一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容</div>
+                    <a href="news.html" class="scenic-details">查看详情</a>
+                </div>
+            </div>
         </div>
         <div class="copyright">
-            <h1>© {{ config('site.title') }} 版权所有</h1>
-            <h2>李艺芳提供技术支持</h2>
-        </div>
-        <div class="nav clearfix">
-            @include('home.layouts.sidebar')
+            <h1>© xxx版权所有</h1>
         </div>
     </div>
-    <em class="return-top">顶部</em>
+    <div class="nav clearfix">
+        <a href="personal-center.html"></a>
+    </div>
     <script type="text/javascript">
         var mySwiper = new Swiper ('.swiper-container', {
             direction: 'horizontal',
@@ -66,12 +80,72 @@
             autoplayDisableOnInteraction : false,
             // 分页器
             pagination: '.swiper-pagination',
+            paginationClickable: '.swiper-pagination',
+            spaceBetween: 30,
+            effect: 'fade'
         });
-        var mySwiperNews = new Swiper ('.swiper-containerNews', {
-            direction: 'vertical',
+        var mySwiperRoom = new Swiper ('.swiper-containerRoom1', {
+            effect: 'cube',
             loop: true,
             autoplay: 3000,
-            autoplayDisableOnInteraction : false,
+            grabCursor: true,
+            cube: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94
+            }
+        });
+        var mySwiperRoom = new Swiper ('.swiper-containerRoom2', {
+            effect: 'cube',
+            loop: true,
+            autoplay: 3000,
+            grabCursor: true,
+            cube: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94
+            }
+        });
+        var mySwiperRoom = new Swiper ('.swiper-containerRoom3', {
+            effect: 'cube',
+            loop: true,
+            autoplay: 3000,
+            grabCursor: true,
+            cube: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94
+            }
+        });
+        var mySwiperRoom = new Swiper ('.swiper-containerRoom4', {
+            effect: 'cube',
+            loop: true,
+            autoplay: 3000,
+            grabCursor: true,
+            cube: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94
+            }
+        });
+        var swiper = new Swiper('.swiper-containerScenic', {
+            effect: 'coverflow',
+            loop: true,
+            // autoplay: 3000,
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflow: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows : true
+            }
         });
     </script>
 @endsection
