@@ -27,7 +27,7 @@ $this->group(['namespace' => 'Home'], function () {
     $this->group(['middleware' => 'user_auth'], function () {
         //添加订单
         $this->get('/order/add/{commodity_id}', 'OrderController@addView')->name('home.order_add');
-        $this->get('/order/addPost', 'OrderController@addPost')->name('home.order_add_post');
+        $this->post('/order/addPost', 'OrderController@addPost')->name('home.order_add_post');
 
         //修改收货信息
         $this->get('/address', 'OrderController@addressView')->name('home.address');

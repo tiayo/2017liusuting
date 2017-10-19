@@ -16,7 +16,7 @@ class OrderService
         $this->order = $order;
         $this->commodity = $commodity;
     }
-    
+
     /**
      * 获取符合条件的订单
      *
