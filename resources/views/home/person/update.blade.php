@@ -66,49 +66,34 @@
             height: 100%;
             border-radius: 50%;
         }
-        /*.user-info li:nth-child(3) {
-            border-bottom: 0;
-        }*/
-        /*.user-info li:nth-child(4) {
-            height: 10px;
-            padding: 0;
-            margin: 0;
-            background-color: #f3f5f9;
-            border-bottom: 0;
-        }*/
-        .user-info li:nth-last-child(1) {
-            border-bottom: 0;
-            height: 100px;
-            line-height: 100px;
-        }
-        .user-info li:nth-last-child(1) label {
+        .save {
             float: left;
-            width: 20%;
-            height: 100%;
-            text-align: left;
-            line-height: 45px;
-        }
-        .user-info li:nth-last-child(1) textarea {
-            float: right;
-            resize: none;
-            outline: none;
-            border: 0;
-            height: 74px;
-            padding: 13px 0;
-        }
-        button {
-            display: block;
-            width: 50%;
+            width: 45%;
             height: 40px;
-            margin: 20px auto 0px;
-            background-color: #ffda44;
-            border-radius: 40px;
+            border: 1px solid #000;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #333;
+            margin-left: 2%;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 40px;
+        }
+        .Pullout {
+            float: right;
+            width: 45%;
+            height: 40px;
+            margin-right: 2%;
+            margin-top: 20px;
+            background-color: #f5f5f5;
             color: #333;
             font-size: 16px;
             font-weight: bold;
             text-align: center;
             line-height: 40px;
-            border: 0;
+            border: 1px solid #000;
+            background-color: rgba(255, 255, 255, 0.5);
         }
     </style>
 @endsection
@@ -118,7 +103,8 @@
         {{ csrf_field() }}
         <ul class="user-info">
             <li>
-                头像<div class="pic">
+                头像
+                <div class="pic">
                     <input name="avatar" type="file" id="portrait-file" />
                     <img src="{{ $user['avatar'] }}" id="user-portrait"/>
                 </div>
@@ -129,12 +115,8 @@
             <li>
                 手机<input name="phone" type="text" value="{{ $user['phone'] }}" id="user-phone"/>
             </li>
-            <li>
-                <label class="form-input-label">详细地址</label>
-                <textarea name="address" id="user-city" cols="30" rows="10" placeholder="请输入您的详细地址">{{ $user['address'] }}</textarea>
-            </li>
         </ul>
-        <button type="submit">保存</button>
+        <button type="submit" class="save">保存</button>
     </form>
-    <button type="button" onclick="location='{{ route('home.logout') }}'">退出登录</button>
+    <button type="button" class="Pullout" onclick="location='{{ route('home.logout') }}'">退出登录</button>
 @endsection

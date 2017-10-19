@@ -55,11 +55,13 @@
         }
         .login #login-button {
             float: left;
-            width: 74%;
+            width: 30%;
             height: 45px;
             margin: 0 13% 10px;
-            background-color: #ffda44;
-            color: #fff;
+            background-color: #f5f5f5;
+            box-shadow: 1px 1px #ccc inset,
+            -1px -1px #ccc inset;
+            color: #333;
             font-size: 16px;
             letter-spacing: 10px;
             text-indent: 10px;
@@ -69,13 +71,12 @@
         }
         .login #registration-button {
             float: left;
-            width: 74%;
+            width: 30%;
             height: 45px;
-            margin: 0 13% 10px;
             background-color: #fff;
-            box-shadow: 1px 1px #ffda44 inset,
-            -1px -1px #ffda44 inset;
-            color: #ffda44;
+            box-shadow: 1px 1px #333 inset,
+            -1px -1px #333 inset;
+            color: #333;
             font-size: 16px;
             letter-spacing: 10px;
             text-indent: 10px;
@@ -111,7 +112,8 @@
             @endforeach
         </div>
         <button type="submit" id="login-button">登录</button>
+        <button id="registration-button" type="button" onclick="location='{{ route('home.register') }}'">注册</button>
     </form>
-    <button id="registration-button" onclick="location='{{ route('home.register') }}'">注册</button>
+
 </div>
 @endsection

@@ -25,13 +25,8 @@ $this->group(['namespace' => 'Home'], function () {
 
     //登录后操作
     $this->group(['middleware' => 'user_auth'], function () {
-        $this->get('/car/list', 'CarController@view')->name('home.car');
-        $this->post('/car/add/{commodity_id}', 'CarController@add')->name('home.car_add');
-        $this->get('/car/destory/{commodity_id}', 'CarController@destory')->name('home.car_destory');
-        $this->post('/car/update', 'CarController@update')->name('home.car_update');
-
         //添加订单
-        $this->get('/order/add', 'OrderController@addView')->name('home.order_add');
+        $this->get('/order/add/{commodity_id}', 'OrderController@addView')->name('home.order_add');
         $this->get('/order/addPost', 'OrderController@addPost')->name('home.order_add_post');
 
         //修改收货信息

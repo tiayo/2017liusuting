@@ -31,7 +31,7 @@
                             @endif
                         @endfor
                     </div>
-                    <span class="room-name">{{ $commodity['name'] }}</span>
+                    <span onclick="location='{{ route('home.commodity_view', ['comodity_id' => $commodity['id']]) }}'" class="room-name">{{ $commodity['name'] }}</span>
                 </div>
             @endforeach
         </div>
@@ -48,11 +48,11 @@
             </div>
         </div>
         <div class="copyright">
-            <h1>© xxx版权所有</h1>
+            <h1>© {{ config('site.title') }} 版权所有</h1>
         </div>
     </div>
     <div class="nav clearfix">
-        <a href="personal-center.html"></a>
+        <a href="{{ route('home.person') }}"></a>
     </div>
     <script type="text/javascript">
         var mySwiper = new Swiper ('.swiper-container', {

@@ -81,11 +81,12 @@ body {
 }
 .index .index-room .swiper-wrapper {
     float: left;
-    width: 100%;
 }
 .index .index-room .swiper-slide img {
     float: left;
     width: 100%;
+    height:114px;
+    overflow: hidden;
 }
 .index .index-room .room-name {
     float: left;
@@ -251,7 +252,7 @@ body {
     margin-bottom: 5px;
     border-bottom: 0;
     font-size: 12px;
-    /*background-color: #999;*/
+    padding: 0 1em;
     box-shadow: 1px 1px 5px #000;
 }
 .pc .content .con ul li .info ul li:nth-child(2n+2) {
