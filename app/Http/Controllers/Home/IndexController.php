@@ -21,8 +21,11 @@ class IndexController extends Controller
     {
         $commodities = $this->index->getByType(0, 6);
 
+        $articles = $this->index->getByGroupArticle(0, 5);
+
         return view('home.index.index', [
-            'commodities' => $commodities
+            'commodities' => $commodities,
+            'articles' => $articles
         ]);
     }
 

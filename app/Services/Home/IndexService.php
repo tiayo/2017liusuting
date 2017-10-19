@@ -2,16 +2,17 @@
 
 namespace App\Services\Home;
 
-use App\Repositories\RoomRepository;
+use App\Repositories\ArticleRepository;
 use App\Repositories\CommodityRepository;
 
 class IndexService
 {
-    protected $commodity;
+    protected $commodity, $article;
 
-    public function __construct(CommodityRepository $commodity)
+    public function __construct(CommodityRepository $commodity, ArticleRepository $article)
     {
         $this->commodity = $commodity;
+        $this->article = $article;
     }
 
     /**
@@ -27,26 +28,15 @@ class IndexService
     }
 
     /**
-     * 获取父级栏目
-     * 
-     * @return mixed
-     */
-    public function getCategoryParent()
-    {
-        return $this->category->getParent();
-    }
-
-    /**
-     * 通过父级id获取下级
+     * 获取符合要求的文章
      *
-     * @param $parent_id
+     * @param $type
+     * @param $limit
      * @return mixed
      */
-    public function getCategoryChildren($parent_id)
+    public function getByGroupArticle($type, $limit)
     {
-        return $this->category->selectGet([
-            ['parent_id', $parent_id],
-        ], 'name', 'id');
+        return $this->article->getByGroup($type, $limit);
     }
 
     /**

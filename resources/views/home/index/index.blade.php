@@ -38,31 +38,13 @@
         <div class="swiper-containerScenic">
             <div class="scenic">附近景点</div>
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="scenic-title">景点介绍标题</div>
-                    <div class="scenic-con">一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容</div>
-                    <a href="news.html" class="scenic-details">查看详情</a>
-                </div>
-                <div class="swiper-slide">
-                    <div class="scenic-title">景点介绍标题</div>
-                    <div class="scenic-con">一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容</div>
-                    <a href="news.html" class="scenic-details">查看详情</a>
-                </div>
-                <div class="swiper-slide">
-                    <div class="scenic-title">景点介绍标题</div>
-                    <div class="scenic-con">一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容</div>
-                    <a href="news.html" class="scenic-details">查看详情</a>
-                </div>
-                <div class="swiper-slide">
-                    <div class="scenic-title">景点介绍标题</div>
-                    <div class="scenic-con">一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容</div>
-                    <a href="news.html" class="scenic-details">查看详情</a>
-                </div>
-                <div class="swiper-slide">
-                    <div class="scenic-title">景点介绍标题</div>
-                    <div class="scenic-con">一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容一小部分内容</div>
-                    <a href="news.html" class="scenic-details">查看详情</a>
-                </div>
+                @foreach($articles as $article)
+                    <div class="swiper-slide">
+                        <div class="scenic-title">{{ $article['title'] }}</div>
+                        <div class="scenic-con">{{ mb_substr(strip_tags($article['content']), 0, 200, 'utf-8') }}...</div>
+                        <a href="{{ route('home.article', ['article_id' => $article['id']]) }}" class="scenic-details">查看详情</a>
+                    </div>
+                @endforeach
             </div>
         </div>
         <div class="copyright">
