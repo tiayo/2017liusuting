@@ -1,5 +1,5 @@
 <!--sidebar nav start-->
-<ul style="margin-top:100px;" class="nav nav-pills nav-stacked custom-nav">
+<ul class="nav nav-pills nav-stacked custom-nav">
 
     <li class="menu-list active nav-active" id="nav_1"><a href=""><i class="fa fa-shopping-cart"></i> <span>客房类型</span></a>
         <ul class="sub-menu-list">

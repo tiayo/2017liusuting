@@ -14,57 +14,16 @@
 
 @section('body')
     <div class="row">
-        <div class="col-md-12">
-            <!--statistics start-->
-            <div class="row state-overview">
-                <div class="col-md-4 col-xs-12 col-sm-4">
-                    <div class="panel purple">
-                        <div class="symbol">
-                            <i class="fa fa-home"></i>
-                        </div>
-                        <div class="state-value">
-                            <div class="value">{{ $avalidate }}</div>
-                            <div class="title">空房数量</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-12 col-sm-4">
-                    <div class="panel red">
-                        <div class="symbol">
-                            <i class="fa fa-key"></i>
-                        </div>
-                        <div class="state-value">
-                            <div class="value">{{ $unavailable }}</div>
-                            <div class="title">住房数量</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-12 col-sm-4">
-                    <div class="panel blue">
-                        <div class="symbol">
-                            <i class="fa fa-first-order"></i>
-                        </div>
-                        <div class="state-value">
-                            <div class="value">{{ $order_count }}</div>
-                            <div class="title">完成的订单</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--statistics end-->
-        </div>
-    </div>
-    <div class="row">
         <div class="col-sm-12">
             <section class="panel">
                 <header class="panel-heading">
                     最新订单
                     <span class="tools pull-right">
-                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-chevron-up"></a>
                             <a href="javascript:;" class="fa fa-times"></a>
                          </span>
                 </header>
-                <div class="panel-body">
+                <div class="panel-body" style="display: none">
                     <section id="unseen">
                         <table class="table table-bordered table-striped table-condensed">
                             <thead>
@@ -132,6 +91,15 @@
                         </table>
                     </section>
                 </div>
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    统计情况：空房数量:{{ $avalidate }}，住房数量:{{ $unavailable }}，完成的订单：{{ $order_count }}
+                </header>
             </section>
         </div>
     </div>
