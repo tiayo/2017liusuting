@@ -28,14 +28,6 @@
 
 		<section class="panel">
             <div class="panel-body">
-                <form class="form-inline" id="search_form">
-                    <div class="form-group">
-                        <label class="sr-only" for="search"></label>
-                        <input type="text" class="form-control" id="search" name="keyword"
-                               value="{{ Request::get('keyword') }}" placeholder="输入订单号，客户姓名、电话、身份证、邮箱" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="salesman_search">搜索</button>
-                </form>
             <header class="panel-heading">
                 订单列表
             </header>
@@ -105,6 +97,15 @@
 		        </table>
 
                {{ $lists->links() }}
+
+                <form class="form-inline" id="search_form">
+                    <div class="form-group">
+                        <label class="sr-only" for="search"></label>
+                        <input type="text" class="form-control" id="search" name="keyword"
+                               value="{{ Request::get('keyword') }}" placeholder="输入订单号，客户姓名、电话、身份证、邮箱" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="salesman_search">搜索</button>
+                </form>
             </div>
     	</section>
     </div>

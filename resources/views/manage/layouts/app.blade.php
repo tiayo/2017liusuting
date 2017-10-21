@@ -44,7 +44,7 @@
                 </li>
                 <li>
                     <a href="#" class="btn" data-toggle="dropdown" style="color: #fff">当前帐号:{{ Auth::guard()->user()['name'] }}</a>
-                    <a style="color: white;" class="btn" href="{{ route('manage.logout') }}">退出登录</a>
+                    <a style="color: white;" class="btn" href="{{ route('manage.logout') }}">注销</a>
             </li>
 
             </ul>
