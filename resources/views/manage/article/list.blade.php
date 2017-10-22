@@ -38,8 +38,7 @@
                             <td>{{ $list['title'] }}</td>
                             <td>{{ config('site.article_group')[$list['group']] }}</td>
                             <td>{{ $list['updated_at'] }}</td>
-                            <td>{{ $list['created_at'] }}</td>
-                            <td>
+                            <td>{{ $list['created_at'] }}</td><td>
                                 <button class="btn btn-info" type="button" onclick="location='{{ route('article_update', ['id' => $list['id'] ]) }}'">编辑</button>
                                 <button class="btn btn-danger" type="button" onclick="javascript:if(confirm('确实要删除吗?'))location='{{ route('article_destroy', ['id' => $list['id'] ]) }}'">删除</button>
                             </td>

@@ -65,7 +65,7 @@
         </div>
     </div>
     <div class="nav clearfix">
-        <a href="index.html"></a>
+        <a href="/"></a>
     </div>
     <script type="text/javascript">
         $(".order-nav li").click(function() {

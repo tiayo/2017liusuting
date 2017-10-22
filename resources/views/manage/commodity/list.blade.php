@@ -7,7 +7,7 @@
 @endsection
 
 @section('breadcrumb')
-    <li navValue="nav_1"><a href="#">客房管理</a></li>
+    <li navValue="nav_1"><a href="#">客房类型管理</a></li>
     <li navValue="nav_1_1"><a href="#">客房类型</a></li>
 @endsection
 

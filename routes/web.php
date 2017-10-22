@@ -1,7 +1,7 @@
 <?php
 
 $this->get('password', function() {
-    return bcrypt('474993693');
+    return bcrypt('123456');
 });
 
 $this->group(['namespace' => 'Home'], function () {

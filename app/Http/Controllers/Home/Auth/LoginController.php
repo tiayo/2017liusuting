@@ -54,6 +54,11 @@ class LoginController extends Controller
         $username = $request->input('username');
         $password = $request->input('password');
 
+        // 验证邮箱登录方式
+        $login = $this->guard()->attempt(
+            ['email' => $username, 'password' => $password], $request->has('remember')
+        );
+
         // 验证身份证登录方式
         $login = $this->guard()->attempt(
             ['id_number' => $username, 'password' => $password], $request->has('remember')

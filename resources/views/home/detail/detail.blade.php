@@ -23,6 +23,7 @@
         .room-details .room-bigpic img {
             float: left;
             width: 100%;
+            height: 234px;
         }
         .room-details .room-bigpic b {
             position: absolute;
@@ -81,15 +82,13 @@
         <div class="swiper-container room-bigpic clearfix">
             <a href="/" id="back"></a>
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <a href="#"><img src="{{ asset('/style/home/picture/bigpic1.jpg') }}"/></a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#"><img src="{{ asset('/style/home/picture/bigpic2.jpg') }}"/></a>
-                </div>
-                <div class="swiper-slide">
-                    <a href="#"><img src="{{ asset('/style/home/picture/bigpic3.jpg') }}"/></a>
-                </div>
+                @for($i=0; $i < 9; $i++)
+                    @if (!empty($commodity['image_'.$i]))
+                        <div class="swiper-slide">
+                            <a href="#"><img src="{{ $commodity['image_'.$i] }}"/></a>
+                        </div>
+                    @endif
+                @endfor
             </div>
             <!-- 分页器 -->
             <div class="swiper-pagination"></div>
